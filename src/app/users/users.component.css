@@ -1,0 +1,10 @@
+.example-card {
+    width: 150px;
+    float: left;
+    margin: 5px;
+}
+
+.card-img {
+    width: 100px;
+    height: 100px;
+}

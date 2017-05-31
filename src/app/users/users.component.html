@@ -1,0 +1,21 @@
+<h3>Users Listing</h3>
+
+<div>
+  <input type="text" name="q" (keyup)="onKeyup($event)" />  
+  <input type="button" value="Search" (click)="onClick()" />
+  <div>Total Records: {{totalRecords}}</div>
+
+  <div *ngIf="searchResults">
+    <md-card class="example-card" *ngFor="let user of searchResults.items">
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title><b>{{user.login}}</b> </md-card-title>
+      </md-card-header>
+      <img md-card-image class="card-img" src="{{user.avatar_url}}">
+      <md-card-actions>
+        <button md-button (click)="getDetails(user)">Details</button>
+      </md-card-actions>
+    </md-card>
+  </div>
+
+</div>
