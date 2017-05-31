@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../services/github/github.service';
+import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css'],
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css'],
   providers: [GithubService]
 })
-export class UsersComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   public q: string;
-  public users;
-
   public totalRecords;
   public searchResults;
 
-  constructor(private githubSergice: GithubService) { }
+  constructor(private router: Router, private githubSergice: GithubService) { }
 
   ngOnInit() {    
   }
@@ -36,7 +35,8 @@ export class UsersComponent implements OnInit {
   }
 
   getDetails(user) {
-    console.log(user)
+    console.log(user);
+    this.router.navigate(['user', user.login]);
   }
 
 }

@@ -22,4 +22,14 @@ export class GithubService {
     )
   }
 
+  getUserDetails(userId): Observable<any> {
+    let url = `https://api.github.com/users/${userId}`;
+    return this.http.get(url).map(
+      res => {
+        console.log('single user', res)
+        return res.json();
+      }
+    )
+  }
+
 }

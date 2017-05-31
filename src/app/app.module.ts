@@ -7,26 +7,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
-import { UsersComponent } from './users/users.component';
+import { SearchComponent } from './search/search.component';
+import { UserComponent } from './user/user.component';
 
-
-const appRoutes: Routes = [
-  { 
-    path: 'search-users', 
-    component: UsersComponent 
-  },
-  { 
-    path: 'users/:id',      
-    component: UsersComponent,
-    //data: { title: 'Heroes List' } 
-  }
-];
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    UsersComponent
+    SearchComponent,
+    UserComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
