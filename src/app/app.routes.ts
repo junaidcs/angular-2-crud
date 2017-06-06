@@ -18,3 +18,5 @@ export const appRoutes: Routes = [
         component: UserComponent
     }
 ];
+
+export const routesComponents = [ TodoComponent, SearchComponent, UserComponent];

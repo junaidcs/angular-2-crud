@@ -13,7 +13,6 @@ export class GithubService {
 
   getUsers(q): Observable<any> {
     let url = `https://api.github.com/search/users?q=${q}`;
-    console.log('url', url)
     return this.http.get(url).map(
       res => {
         const data = res.json();
@@ -26,7 +25,6 @@ export class GithubService {
     let url = `https://api.github.com/users/${userId}`;
     return this.http.get(url).map(
       res => {
-        console.log('single user', res)
         return res.json();
       }
     )
