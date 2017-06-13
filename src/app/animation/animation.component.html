@@ -1,4 +1,23 @@
 <h2>Animation Demo</h2>
 
 <button (click)="toggleLights()">Toggle</button>
-<div [@lightOnOf]="lightState" class="animation-div">Rotate me</div>
+<br />
+<div 
+    (@lightOnOf.start)="animationStarted($event)" 
+    (@lightOnOf.done)="animationEnded($event)" 
+    [@lightOnOf]="lightState" class="animation-div">
+    Rotate me ..
+</div>
+
+
+<!--<br>
+<button (click)="moveBoxBtn()">Move</button>-->
+
+<div 
+    (@circleLeftRight.start)="circleAnimationStarted($event)" 
+    (@circleLeftRight.done)="circleAnimationEnded($event)" 
+    [@circleLeftRight]="boxState" class="animation-div2">
+    Circle State .. 
+</div>
+
+<div class="textDiv" *ngIf="showDIv" [@divText]>SOME TEXT</div>
